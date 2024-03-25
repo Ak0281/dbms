@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}
+Wheat Details Registration
+{% endblock title %}
+
+{% block body %}
+{% with messages=get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+        {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">wid</th>
+      <th scope="col">Genotypes</th>
+      <th scope="col">R1_PH</th>
+      <th scope="col">R2_PH</th>
+      <th scope="col">R3_PH</th>
+      <th scope="col">R1_TPP</th>
+      <th scope="col">R2_TPP</th>
+      <th scope="col">R3_TPP</th>
+      <th scope="col">R1_DFF</th>
+      <th scope="col">R2_DFF</th>
+      <th scope="col">R3_DFf</th>
+      <th scope="col">R1_SPAD</th>
+      <th scope="col">EDIT</th>
+      <th scope="col">DELETE</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for post in query %}
+      <tr>
+        <th scope="row">{{post.wid}}</th>
+        <td>{{post.Genotypes}}</td>
+        <td>{{post.R1_PH}}</td>
+        <td>{{post.R2_PH}}</td>
+        <td>{{post.R3_PH}}</td>
+        <td>{{post.R1_TPP}}</td>
+        <td>{{post.R2_TPP}}</td>
+        <td>{{post.R3_TPP}}</td>
+        <td>{{post.R1_DFF}}</td>
+        <td>{{post.R2_DFF}}</td>
+        <td>{{post.R3_DFF}}</td>
+        <td>{{post.R1_SPAD}}</td>
+        
+        <td><a href="/dit/{{post.wid}}"><button class="btn btn-primary">Edit</button></a></td>
+        <td><a href="/delete/{{post.wid}}" onclick="return confirm('Are you sure to Delete data?');"><button class="btn btn-danger">Delete</button></a></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock body %}

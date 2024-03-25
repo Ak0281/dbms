@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}
+Edit Scientist Details
+{% endblock title %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <h4 class="text-center bg-dark text-white">Update Your Details</h4>
+            <form action="/edits/{{ post.sid }}" method="post" class="h-100 p-5 bg-body-tertiary border rounded-3">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="fname" name="fname" value="{{ post.fname }}" placeholder="First Name" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="lname" name="lname" value="{{ post.lname }}" placeholder="Last Name" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="email" name="email" value="{{ post.email }}" placeholder="Email" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="number" name="number" value="{{ post.number }}" placeholder="Mobile Number" required>
+                </div>
+                <br>
+            
+                <div class="form-group">
+                    <input type="text" class="form-control" id="dept" name="dept" value="{{ post.dept }}" placeholder="Department" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="specialization" name="specialization" value="{{ post.specialization }}" placeholder="Specialization" required>
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" id="rtopic" name="rtopic" value="{{ post.rtopic }}" placeholder="Research Topic" required>
+                </div>
+                <br>
+                
+                <button type="submit" class="btn btn-success btn-sm btn-block">Update</button>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+{% endblock body %}

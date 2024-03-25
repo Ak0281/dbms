@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}
+Wheat Details
+{% endblock title %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+            <h2 class="text-center bg-dark text-white">Wheat Info</h2>
+            <br>
+            {% with messages=get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+                {{message}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <form action="/wheat" method="post" class="h-100 p-5 bg-body-tertiary border rounded-3">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="Genotypes" name="Genotypes" placeholder="Genotypes" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="R1_PH" name="R1_PH" placeholder="R1_PH" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="R2_PH" name="R2_PH" placeholder="R2_PH" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="R3_PH" name="R3_PH" placeholder="R3_PH" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="R1_TPP" name="R1_TPP" placeholder="R1_TPP" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="R2_TPP" name="R2_TPP" placeholder="R2_TPP" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="R3_TPP" name="R3_TPP" placeholder="R3_TPP" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="R1_DFF" name="R1_DFF" placeholder="R1_DFF" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="R2_DFF" name="R2_DFF" placeholder="R2_DFF" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="R3_DFF" name="R3_DFF" placeholder="R3_DFF" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="R1_SPAD" name="R1_SPAD" placeholder="R1_SPAD" required>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-warning btn-sm btn-block">Submit</button>
+                <br>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock body %}

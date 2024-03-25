@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}
+Edit Wheat Details
+{% endblock title %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 mt-2">
+            <h4 class="text-center bg-dark text-white">Update Wheat Details</h4>
+            <form action="/dit/{{ post.wid }}" method="post" class="h-100 p-5 bg-body-tertiary border rounded-3">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="Genotypes" name="Genotypes" value="{{ post.Genotypes }}" placeholder="Genotypes" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="R1_PH" name="R1_PH" value="{{ post.R1_PH }}" placeholder="R1_PH" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="R2_PH" name="R2_PH" value="{{ post.R2_PH }}" placeholder="R2_PH" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="R3_PH" name="R3_PH" value="{{ post.R3_PH }}" placeholder="R3_PH" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="R1_TPP" name="R1_TPP" value="{{ post.R1_TPP }}" placeholder="R1_TPP" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="R2_TPP" name="R2_TPP" value="{{ post.R2_TPP }}" placeholder="R2_TPP" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="R3_TPP" name="R3_TPP" value="{{ post.R3_TPP }}" placeholder="R3_TPP" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="R1_DFF" name="R1_DFF" value="{{ post.R1_DFF }}" placeholder="R1_DFF" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="R2_DFF" name="R2_DFF" value="{{ post.R2_DFF }}" placeholder="R2_DFF" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="R3_DFF" name="R3_DFF" value="{{ post.R3_DFF }}" placeholder="R3_DFF" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="R1_SPAD" name="R1_SPAD" value="{{ post.R1_SPAD }}" placeholder="R1_SPAD" required>
+                </div>
+                <br>
+                
+                <button type="submit" class="btn btn-success btn-sm btn-block">Update</button>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+
+{% endblock body %}

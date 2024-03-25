@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Scientist
+{% endblock title %}
+
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+    
+    <div class="col-md-4">
+        
+    
+    
+    </div>
+    <div class="col-md-4">
+    
+        <h2 class="text-center bg-dark text-white">Scientist Info</h2>
+    <br>
+    
+    {% with messages=get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    
+    <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+        {{message}}
+    
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    
+    
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    
+    
+    
+    
+    <form action="/Scientist" method="post" class="h-100 p-5 bg-body-tertiary border rounded-3">
+    
+     
+    
+      
+    
+      <div class="form-group">
+      
+        <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name" required>
+      
+      </div>
+      <br>
+      <div class="form-group">
+      
+        <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name" required>
+      
+      </div>
+      <br>
+
+      <div class="form-group">
+    
+        <input type="email" class="form-control" id="email" value={{current_user.email}} name="email" required>
+      
+      </div>
+    
+      <br>
+
+      <div class="form-group">
+    
+        <input type="number" class="form-control" id="number" name="number" placeholder="Mobile" required>
+      
+      </div>
+      <br>
+    
+     
+    
+      <div class="form-group">
+        
+        <input type="text" class="form-control" id="dept" name="dept" placeholder="Department" required>
+      
+      </div>
+      <br>
+    
+      <div class="form-group">
+        
+        <input type="text" class="form-control" id="specialization" name="specialization" placeholder="Specialization" required>
+      
+      </div>
+      <br>
+    
+      <div class="form-group">
+        
+        <input type="text" class="form-control" id="rtopic" name="rtopic" placeholder="Research Topic" required>
+      
+      </div>
+      <br>
+      
+      <button type="submit" class="btn btn-warning btn-sm btn-block">Submit</button>
+      <br>
+    </form>
+    
+    
+    
+    </div>
+    
+    
+    </div>
+    
+    
+    
+    </div>
+    
+
+
+{% endblock body %}
